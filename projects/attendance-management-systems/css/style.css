@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color:#135f8f;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.login-img img {
+  width: 100%;
+  height: auto;
+}
+#header {
+  width: 100%;
+  height: auto;
+  background-color: #00a65a;
+}
+::placeholder
+{
+  color: white !important;
+  font-size: 18px !important;
+}
+
+.sidebar-links li {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 8px 2px;
+  font-size: 17px;
+}
+.sidebar-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.navbar ul li 
+{
+text-decoration: none !important;
+list-style-type: none !important;
+display: inline-block;
+padding: 0px 30px;
+
+}
+.navbar a 
+{
+color: black !important;
+text-decoration: none !important;
+list-style-type: none;  
+}

@@ -1,0 +1,174 @@
+what is key constraints ?
+ provides limitations on any tables there we used key constraints 
+  types of key constraints 
+
+  a) primary key 
+  b) unique key 
+  c) foreign key 
+  d) compound key 
+
+
+  a) primary key : A pk is provides a once time in a tables 
+                   A Pk key is used to provides unique identify in a tables 
+                   A pk key never return a null values 
+
+
+                   user 
+
+         id(pk)     name     pass    age     address     pin            
+         
+
+         
+  a) primary key : A pk is provides a once time in a tables 
+                   A Pk key is used to provides unique identify in a tables 
+                   A pk key never return a null values 
+
+
+                   user 
+
+         id(pk)     name     pass    age     address     pin            
+         
+
+
+    b) unique key : A uk is provides more than   once time in a tables 
+                    A uk key is used to provides unique identify in a tables on any columns  
+                    A uk key is not null 
+                    A uk never return a dublicate values  
+
+
+
+
+                   user 
+
+         id(pk)     name  email(uk)      pass    age     address     pin    adharnumber(uk)   mobile(uk)
+
+
+
+
+
+    c) foreign key : A fk is provides more than   once time in a tables 
+                    A fk key is used to provides relationship one tables to another tables with common field  
+                    A fk key is not null 
+                    A fk return dublicate data  
+
+
+     
+                   country
+
+        cid(pk)   cname
+        1          india
+        2          canada 
+
+
+                   user 
+
+         id(pk)     name    email(uk)      pass    age     address     pin    adharnumber(uk)   mobile(uk)  cid(fk)
+         1          khushi  k@gmail.com    k1      18       rjt       360005   55454545         912121212    1
+
+
+
+   SQL Join ... 
+     sql join is used to join more than one tables of matched data from first table to another tables 
+
+
+   examples : select  tbl_employee.*,countryname from tbl_employee join tbl_country on tbl_employee.country_id=tbl_country.country_id; 
+
+   or 
+
+
+   select  empid,name,email,adharnumber,pin,countryname from tbl_employee join tbl_country on tbl_employee.country_id=tbl_country.country_id; 
+
+   or
+
+   select  empid,name,email,countryname from tbl_employee join tbl_country on tbl_employee.country_id=tbl_country.country_id;                  
+
+
+
+  
+     types of join ... 
+
+      a) inner join 
+      b) join 
+      c) outer join 
+
+             1) left join 
+             2) right join 
+             3) full join 
+
+       d) cross join  
+
+
+
+    Note : full join is not supported in mysql 
+
+
+         
+         
+         a) join   :
+
+            select  tbl_employee.*,countryname from tbl_employee join tbl_country on tbl_employee.country_id=tbl_country.country_id; 
+
+   or 
+
+
+   select  empid,name,email,adharnumber,pin,countryname from tbl_employee join tbl_country on tbl_employee.country_id=tbl_country.country_id; 
+
+   or
+
+   select  empid,name,email,countryname from tbl_employee join tbl_country on tbl_employee.country_id=tbl_country.country_id;                  
+
+
+
+  b) inner join : join and inner join is almost same 
+
+           select  tbl_employee.*,countryname from tbl_employee inner join tbl_country on tbl_employee.country_id=tbl_country.country_id; 
+
+   or 
+
+
+   select  empid,name,email,adharnumber,pin,countryname from tbl_employee  inner join tbl_country on tbl_employee.country_id=tbl_country.country_id; 
+
+   or
+
+   select  empid,name,email,countryname from tbl_employee inner join tbl_country on tbl_employee.country_id=tbl_country.country_id;                  
+
+
+
+   c) outer join :  
+
+          a) left join : left join is used to join matched data from first table of left rows to second tables of left rows if data matched join all data otherwise return null values
+           
+             
+             examples : 
+
+                  
+   select  empid,name,email,countryname from tbl_employee left join tbl_country on tbl_employee.country_id=tbl_country.country_id;                  
+
+
+
+
+      b) right join : right join is used to join matched data from second table of right rows to first tables of right rows if data matched join all data otherwise return null values
+           
+             
+             examples : 
+
+                  
+   select  empid,name,email,countryname from tbl_employee right join tbl_country on tbl_employee.country_id=tbl_country.country_id;                  
+
+
+
+
+
+ 4) cross join : cross join is used to join more than one tables and return a cross (multiplication of each rows) and return a dublicate of repeated data many times 
+
+
+                examples : select * from  tbl_employee cross join tbl_country;    
+            
+
+                                   A 
+
+                            B       C      D
+
+                    E    F   G     H    I   J   K  L              
+
+

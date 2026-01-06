@@ -1,0 +1,300 @@
+what is sql ?
+sql stands for structured query language 
+sql is used to create a datatabase and tables structures 
+sql is a case insenstive language
+ex:INSERT or Insert or insert 
+sql is provides some query or command to create table structures...
+
+types of query or commands in sql ...
+
+a) DDL 
+b) DML
+c) DQL
+c) TCL 
+
+
+a) DDL : ddl stands for data definition language 
+       Note : ddl is used to create a database and tables structures 
+
+      DDL query : create | alter | truncate | drop | rename | change 
+
+
+    1) create database : create is used to create database and tables structured 
+
+      syntax : create database databasename;
+
+      examples : create database flip_db; 
+
+
+    2) create table : create table is used to create a table structured
+              table contains row and column    
+
+      syntax : create table tablename 
+      (
+         columnname data-type(size) primary key auto_increment,
+
+         columnname data-type(size) 
+
+
+      )   
+
+
+      examples : create table tbl_register(
+
+    rid int PRIMARY key AUTO_INCREMENT,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255),
+    phone bigint,
+    address text
+
+)
+
+
+   examples : create table tbl_contact(
+
+    contactid int PRIMARY key AUTO_INCREMENT,
+    name varchar(255),
+    email varchar(255),
+    phone bigint,
+    subject varchar(255),
+    comment text
+
+)
+
+
+examples : create table tbl_feedback(
+
+    feedbacktid int PRIMARY key AUTO_INCREMENT,
+    name varchar(255),
+    email varchar(255),
+    phone bigint,
+    ratings varchar(255),
+    comment text
+
+)
+
+
+examples : create table tbl_bookappointment(
+
+ patient_id int primary key AUTO_INCREMENT,
+ patientname varchar(255),
+ age int,
+ phone bigint,
+ city varchar(255),   
+ weight int,
+ deases varchar(255),
+ appontment_date_time varchar(255)   
+
+
+)
+
+
+2) alter : alter is used to add | modify | change any columns name after create a tables. 
+
+  examples : alter table tbl_bookappointment add state varchar(255) after phone;
+
+  examples : alter table tbl_bookappointment add photo varchar(255);
+
+
+3) rename : rename is used to rename  a table name 
+
+      examples: rename table  tbl_contact to tbl_contactus;
+
+4) truncate : truncate is used to delete data from tables after truncate we can not rollback a data
+
+      examples :truncate table tablename;
+                truncate table tbl_contactus;     
+
+5) drop : drop is used to delete database or table structured after drop we can not rollback the data of tables or database.
+
+          a) drop database flip_db;
+          b) drop table tbl_contactus;  
+
+6: change : change is used to change a column name is a tables.
+
+        examples : alter table tbl_contactus CHANGE  comment message text;
+
+
+
+
+DML : dml stands for data manupulation language
+
+      a) insert 
+      b) delete 
+      c) update 
+
+      a) insert a rows in a table or data in a tables 
+         examples : insert a single row 
+          insert into tablename (columname) values('value');
+          or 
+          insert into tbl_contactus(name,email,phone,subject,message) values('brijesh','b@gmail.com',91212121,'hi','hi contact')
+
+
+        How to stored multiples data 
+
+      insert into tbl_contactus values('null','rajesh','rajesh@gmail.com',912515212,'hi','hi brijesh'),('null','kumar','k@gmail.com',912515212,'hi','hi brijesh'),('null','sahbaz','sahbaz@gmail.com',912515212,'hi','hi brijesh')
+
+
+
+
+     b) how to delete data from tables 
+
+       Note : delete is used to delete rows or data from tables 
+              after delete we can  rollback data in tables   
+
+        examples : all data delete 
+
+                 1) delete from tbl_contactus;
+                 
+                 2) delete from tbl_contactus where id=1;
+                 
+                 3) delete from tbl_contactus where name='brijesh';
+                 
+                 4) delete from tbl_contactus where email='b@gmail.com';      
+
+                 5) delete from tbl_contactus where contactid BETWEEN 500 and 1000;
+
+                 6) delete from tbl_contactus where contactid BETWEEN 1 and 4;
+
+                 7)delete from tbl_contactus where contactid in (2,3);
+
+
+
+
+
+       c) Update : update is used to update any rows data from tables 
+
+                  examples : update tablename set columname='value' where id=4;
+
+                  update tbl_contactus set name='mitesh',email='mitesh@gmail.com',phone='635845789',subject='hey mitesh',message='good' where contactid=4;    
+
+        
+
+     d) DQL : stands for data query language 
+
+               examples : select
+
+
+              1) select all data 
+                  select * from tbl_contact; 
+
+
+              2) select particular data from id
+                  select * from tbl_contact where contactid=1;
+
+
+              3) select particular data from name
+                  select * from tbl_contactus where name='mitesh'; 
+
+
+              4) select * from tbl_contactus where id in(1,4,6);
+
+              5) select * from tbl_contactus where id between 1 and 1000;
+
+              
+              6) select * from tbl_contactus where contactid LIMIT 0,5;
+
+               
+
+               what is order by and group by ..........
+
+               a) Order by : order by is used to filter data from tables in asc and desc orders 
+
+                  ex: select * from tbl_employee order by empid asc;
+                      select * from tbl_employee order by name asc;
+                      select * from tbl_employee order by name desc;
+
+
+               b) group by : group by is used to filter data from tables in group of columns 
+
+                    ex: select sum(salary),department from tbl_employee group by department;    
+
+
+               7) particulars column name select 
+
+                   ex: select empid,name,age from tbl_employee;  
+
+
+               8) searching with like oeprator 
+
+                   1) search name from tables name start with 'a' letter
+
+                        ex:  select * from tbl_employee where name like 'a%';
+
+
+                   2) search name from tables name end with 'h' letter
+
+                        ex:  select * from tbl_employee where name like '%h';
+
+                   3) search name from tables name start or end with 'a' 
+
+                    select * from tbl_employee where name like '%a%';
+
+
+
+               SQL function :
+
+                  sql provides two types of function ....
+                  
+                 a) aggrigate function
+                   
+                  examples : avg() | sum() | max() | min() | count()
+
+                  1) avg () : find average 
+
+                           select avg(salary) as average_salary from tbl_employee;
+
+                  2) sum() : sum of salary
+
+                           select sum(salary) as sum_salary from tbl_employee;
+
+                  3) max() : max of salary
+
+                           select max(salary) as max_salary from tbl_employee;
+
+                  4) min() : min of salary
+
+                           select min(salary) as min_salary from tbl_employee;
+
+                  5) count() :count a numbers 
+
+                             select count(empid) as total_employee from tbl_employee;
+
+                         
+
+     
+                 b) scalar function 
+
+                  examples : first() | last()  | lcase() | ucase() 
+
+                     a) first() is used to fetch first rows data only
+
+                         ex: select first(name) from tbl_employee;
+
+
+                     b) last() is used to fetch last rows data only 
+               
+                         ex: select last(name) from tbl_employee;
+
+                     c) lcase is used to convert an rows in lower case
+                         ex: select lcase(name) from tbl_employee;
+
+                     d) ucase is used to convert an rows in uppercase case    
+
+                          ex: select ucase(name) from tbl_employee;   
+
+
+
+
+
+                 subquery in sql : query within another query 
+
+                    examples : select max(salary) as second_highest_salary from tbl_employee where salary < (select max(salary) from tbl_employee);
+
+
+ 
+                    
+
+
+

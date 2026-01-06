@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #00a65a;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+#admin-dashboard {
+  width: 100%;
+  height: auto;
+  background-color: #eceff4;
+}
+.login-img img {
+  width: 100%;
+  height: auto;
+}
+#header {
+  width: 100%;
+  height: auto;
+  background-color: #00a65a;
+}
+
+.sidebar-links li {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 8px 2px;
+  font-size: 17px;
+}
+.sidebar-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}

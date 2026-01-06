@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #00a65a;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+#admin-dashboard {
+  width: 100%;
+  height: auto;
+  background-color: #eceff4;
+}
+.login-img img {
+  width: 100%;
+  height: auto;
+}
+#header {
+  width: 100%;
+  height: auto;
+  background-color: #00a65a;
+}
+::placeholder
+{
+  color: white !important;
+  font-size: 18px !important;
+}
+.dropdown
+{
+  padding: 2px;
+}
+.dropdown-menu
+{
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 15px 15px;
+  font-size: 19px;
+}
+.dropdown:hover .dropdown-menu
+{
+  display: block;
+}
+.dropdown-menu a
+{
+  color: black !important;
+  padding: 2px 12px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown a{
+  color: white;
+  text-decoration: none;
+  font-size: 19px;
+}
+
+.sidebar-links li {
+  text-decoration: none;
+  list-style-type: none;
+  padding: 8px 2px;
+  font-size: 17px;
+}
+.sidebar-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}

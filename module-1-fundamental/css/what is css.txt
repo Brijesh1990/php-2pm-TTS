@@ -1,0 +1,68 @@
+what is css  ?
+  css stands for cascading stylesheet 
+  css provides style on your web pages 
+  css file extension is .css 
+
+what is css selector ?
+  css selector is used to provides different-2 style on our webpages 
+  types of css selector ...
+
+  a) element selector 
+  b) id selector 
+  c) class selector 
+  d) universal selector 
+  e) grouping selector 
+
+
+  a) element selector ..
+     call tag or element direct in css and provides style on our webpage i.e called element selector.
+
+
+  b) id selector :
+     Id call through # symbol 
+     id is unique
+     id is never repeated 
+     id provides different-2 style on different-2 section 
+
+     
+  c) class selector :
+     class call through . symbol 
+     class is not  unique
+     class is always repeated 
+     class provides different-2 style on different-2 section 
+
+
+     
+  c) universal selector :
+     universal selector call through * 
+     universal provides style in all sections at once times 
+
+
+
+  d) grouping selector : 
+
+      grouping select call through (space)
+      grouping is called style on parent with child 
+
+
+
+  types of css .....
+
+  There are 3 way to provides css 
+
+   a) inline css
+   b) internal css
+   c) external css
+
+
+   a) inline css : 
+          inline css called inside of tags using <style> i.e called inline css 
+          exa: <p>Hi Brijesh</p>
+
+   b) internal css 
+
+
+
+   c) external css :  
+
+      

@@ -1,0 +1,44 @@
+what is html  ?
+html stands for hypertext markup language 
+html first time released in 1986 by tim berner lee 
+html is used for create any website of webpage
+html stands for hypertext markup language 
+html is not any any language it is a markup language 
+html file extension .html or .htm 
+basic structures of html...
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 align="center">Hey : My name is Brijesh kumar pandey</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis saepe, quod
+      consectetur aliquid magni odit perferendis ut minus. Labore eos quae dolor
+      fugiat facilis eius perspiciatis recusandae nam ducimus expedita!
+    </p>
+  </body>
+</html>
+
+
+html tag ....
+
+html tag provides structures ...
+html tags defines inside of <html> is called  tag
+
+types of tag ....
+
+a) paired tag 
+     ex: start and closed paired tag <p>hi</p>
+                                      
+ 
+b) non-paired tag 
+   ex: start but not need to closed i.e called non-paired tag 
+       <br> , <hr>, <input> , <meta> , <link> , <img> etc
+
+    
+

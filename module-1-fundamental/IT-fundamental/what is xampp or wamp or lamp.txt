@@ -1,0 +1,32 @@
+what is XAMPP  | LAMP | WAMP ? 
+
+   XAMPP WAMP and LAMP is a server tools of PHP 
+
+   XAMPP : 
+
+   X:cross plateform (support all OS)
+   A:Apache(server)
+   M:Mysql(database)
+   P:perl(proceddural based language)
+   P:php
+
+
+   LAMP
+   
+   L:support only linux/unix
+   A:Apache(server)
+   M:Mysql(database)
+   P:php
+
+
+
+
+   WAMP
+      
+   L:windows family only
+   A:Apache(server)
+   M:Mysql(database)
+   P:php
+
+
+
