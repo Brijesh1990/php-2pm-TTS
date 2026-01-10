@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class AdminControllerDashboard extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,20 +14,9 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        return view('task.register');
+        return view('task.admin.dashboard');
     }
 
-    // create function to load login
-    public function login()
-    {
-        return view('task.login');
-    }
-
-    // create a function to load dashboard
-    public function dashboard()
-    {
-        return view('task.content');
-    }
     /**
      * Show the form for creating a new resource.
      *
@@ -54,9 +44,9 @@ class RegisterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        return view('task.managetask');
+        //
     }
 
     /**
