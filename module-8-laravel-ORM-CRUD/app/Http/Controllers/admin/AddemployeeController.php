@@ -53,6 +53,7 @@ class AddemployeeController extends Controller
         );
         // insert elequent ORM model
         AdminAddEmployee::create($data);
+        //dd($data);
         return redirect('/admin-login/add-employee')->with('success','Thanks for contact with us');
 
 
@@ -103,6 +104,7 @@ class AddemployeeController extends Controller
 
         // create elequent query builder for update data
         AdminAddEmployee::where('id',$id)->update($data);
+       
         return redirect('/admin-login/manage-employee')->with('success','Employee data successfully updated');
     }
 

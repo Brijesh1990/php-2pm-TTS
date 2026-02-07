@@ -21,17 +21,21 @@
         </div>
 
         <div class="col-md-4">
+          <a href="/admin-login/manage-employee" class="text-decoration-none">
           <div class="card dashboard-card shadow-sm p-4">
-            <h6 class="text-muted">Completed</h6>
-            <h3 class="fw-bold text-success">18</h3>
+            <h6 class="text-muted">Total Employees</h6>
+            <h3 class="fw-bold text-success">{{$totalEmployee}}</h3>
           </div>
+          </a>
         </div>
 
         <div class="col-md-4">
-          <div class="card dashboard-card shadow-sm p-4">
+        <a href="/admin-login/manage-contact" class="text-decoration-none">  
+        <div class="card dashboard-card shadow-sm p-4">
             <h6 class="text-muted">Total contacts</h6>
-            <h3 class="fw-bold text-danger">   </h3>
+            <h3 class="fw-bold text-danger">{{$totalContact}}</h3>
           </div>
+          </a>
         </div>
       </div>
 

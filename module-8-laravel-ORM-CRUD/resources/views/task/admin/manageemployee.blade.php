@@ -32,7 +32,7 @@ Total Employee {{ $data->count() }}
 @endif
 
 <div class="table-responsive">
-<table class="table align-middle">
+<table id="employeeTable" class="table align-middle">
 <thead class="table-light">
 <tr>
 <th>Id</th>
@@ -52,11 +52,8 @@ Total Employee {{ $data->count() }}
 <td>{{$row->phone}}</td>
 <td>{{$row->address}}</td>
 <td><a href='{{asset("/admin-login/manage-employee/".$row->id)}}'><button class="btn btn-sm btn-outline-danger" onclick="return confirm('Are you sure to delete employee ?')"><span class="bi bi-trash"></button></a>
-
 |
-
 <a href='{{asset("/admin-login/manage-employee/".$row->id)}}'><button class="btn btn-sm btn-outline-info" onclick="return confirm('Are you sure to edit employee ?')"><span class="bi bi-pencil"></button></a>
-
 </td>
 </tr>
 @endforeach

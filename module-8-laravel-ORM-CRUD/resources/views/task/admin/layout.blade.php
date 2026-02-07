@@ -7,100 +7,109 @@
 <!-- Bootstrap 5 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<!-- table data css plugins -->
+<link rel="stylesheet" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.css">
 <!-- custom css -->
- <link href="{{asset('task/admin/css/style.css')}}" rel="stylesheet">
+<link href="{{asset('task/admin/css/style.css')}}" rel="stylesheet">
 <body>
 <div class="container-fluid">
-  <div class="row">
+<div class="row">
 
-    <!-- Sidebar -->
-  
+<!-- Sidebar -->
+
 
 <nav class="col-lg-2 col-md-3 d-none d-md-block sidebar p-3">
-  <h4 class="fw-bold mb-4 text-center">Admin</h4>
+<h4 class="fw-bold mb-4 text-center">Admin</h4>
 
-  <ul class="nav flex-column sidebar-menu">
+<ul class="nav flex-column sidebar-menu">
 
-    <li class="nav-item">
-      <a href="/admin-login/dashboard" class="nav-link active">
-        <i class="bi bi-speedometer2 me-2"></i> Dashboard
-      </a>
-    </li>
+<li class="nav-item">
+<a href="/admin-login/dashboard" class="nav-link active">
+<i class="bi bi-speedometer2 me-2"></i> Dashboard
+</a>
+</li>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="bi bi-list-task me-2"></i> Tasks
-      </a>
-    </li>
+<li class="nav-item">
+<a href="#" class="nav-link">
+<i class="bi bi-list-task me-2"></i> Tasks
+</a>
+</li>
 
-    <!-- Employee Dropdown -->
-    <li class="nav-item dropdown">
-      <a href="#" class="nav-link dropdown-toggle">
-        <i class="bi bi-people me-2"></i> Add Employee
-      </a>
+<!-- Employee Dropdown -->
+<li class="nav-item dropdown">
+<a href="#" class="nav-link dropdown-toggle">
+<i class="bi bi-people me-2"></i> Add Employee
+</a>
 
-      <ul class="dropdown-menu">
-        <li>
-          <a class="dropdown-item" href="/admin-login/add-employee">
-            <i class="bi bi-person-plus me-2"></i> Add Employee
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item" href="/admin-login/manage-employee">
-            <i class="bi bi-gear me-2"></i> Manage Employee
-          </a>
-        </li>
-      </ul>
-    </li>
+<ul class="dropdown-menu">
+<li>
+<a class="dropdown-item" href="/admin-login/add-employee">
+<i class="bi bi-person-plus me-2"></i> Add Employee
+</a>
+</li>
+<li>
+<a class="dropdown-item" href="/admin-login/manage-employee">
+<i class="bi bi-gear me-2"></i> Manage Employee
+</a>
+</li>
+</ul>
+</li>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link">
-        <i class="bi bi-bar-chart me-2"></i> Reports
-      </a>
-    </li>
+<li class="nav-item">
+<a href="#" class="nav-link">
+<i class="bi bi-bar-chart me-2"></i> Reports
+</a>
+</li>
 
-    <li class="nav-item">
-      <a href="/admin-login/manage-contact" class="nav-link">
-        <i class="bi bi-phone me-2"></i> Manage Contact
-      </a>
-    </li>
+<li class="nav-item">
+<a href="/admin-login/manage-contact" class="nav-link">
+<i class="bi bi-phone me-2"></i> Manage Contact
+</a>
+</li>
 
-    <hr>
+<hr>
 
-    <li class="nav-item">
-      <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#logoutModal">
-        <i class="bi bi-power text-danger me-2"></i> Logout
-      </a>
-    </li>
+<li class="nav-item">
+<a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#logoutModal">
+<i class="bi bi-power text-danger me-2"></i> Logout
+</a>
+</li>
 
-  </ul>
+</ul>
 </nav>
 
 
-    <!-- Main Content -->
-    @yield('dashboard')
-  </div>
+<!-- Main Content -->
+@yield('dashboard')
+</div>
 </div>
 
 <!-- Logout Modal -->
 <div class="modal fade" id="logoutModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content rounded-4">
-      <div class="modal-header">
-        <h5 class="modal-title">Confirm Logout</h5>
-        <button class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body text-center">
-        Are you sure you want to logout?
-      </div>
-      <div class="modal-footer justify-content-center">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-        <a href="logout.html" class="btn btn-danger">Logout</a>
-      </div>
-    </div>
-  </div>
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content rounded-4">
+<div class="modal-header">
+<h5 class="modal-title">Confirm Logout</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
 </div>
-
+<div class="modal-body text-center">
+Are you sure you want to logout?
+</div>
+<div class="modal-footer justify-content-center">
+<button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+<a href="logout.html" class="btn btn-danger">Logout</a>
+</div>
+</div>
+</div>
+</div>
+<!-- data tbales js  -->
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.datatables.net/2.3.7/js/dataTables.js"></script>
+<script>
+$(document).ready(function() {
+    $('#employeeTable').DataTable();
+});
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

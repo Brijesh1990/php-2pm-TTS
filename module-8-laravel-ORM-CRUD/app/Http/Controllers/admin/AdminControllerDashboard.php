@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use DB;
 class AdminControllerDashboard extends Controller
 {
     /**
@@ -14,7 +13,17 @@ class AdminControllerDashboard extends Controller
      */
     public function index()
     {
-        return view('task.admin.dashboard');
+        // apply select query for count total contact
+        $totalContact=DB::table('contacts')->count();
+        // apply select query for count total employee
+        $totalEmployee=DB::table('admin_add_employees')->count();
+        // print query result
+        //dd($totalContact,$totalEmployee);
+        // apply select query for count total task
+        
+        // pass data in view
+        return view('task.admin.dashboard',compact('totalContact','totalEmployee'));
+    
     }
 
     /**
