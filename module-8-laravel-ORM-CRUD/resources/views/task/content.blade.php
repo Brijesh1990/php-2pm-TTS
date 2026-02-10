@@ -4,6 +4,12 @@ Daily Tasks
 @endsection
 @section('content')
 <div class="section-label">IMPORTANT</div>
+<!-- pass a success messages  -->
+@if(Session('success'))
+<div class="alert alert-success">
+<span>{{session('success')}}</span>
+</div>
+@endif
   <div class="task-card task-important">
     <div class="task-info">
       <div class="task-icon">

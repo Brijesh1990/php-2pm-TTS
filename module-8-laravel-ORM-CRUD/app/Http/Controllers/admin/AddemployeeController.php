@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\admin;
 use App\Models\AdminAddEmployee;
 use App\Http\Controllers\Controller;

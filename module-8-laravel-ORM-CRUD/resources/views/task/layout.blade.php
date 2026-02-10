@@ -65,39 +65,62 @@
 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 </div>
 <div class="modal-body">
+
+<!-- pass a error vaalidation message -->
+ @if ($errors->any())
+<div class="alert alert-danger">
+<ul>
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+</div>
+@endif
 <form method="post">
+@csrf
 <div class="mb-3">
 <label class="form-label">Task Title</label>
-<input type="text" class="form-control" placeholder="Enter task title" required>
+<input type="text" name="title" class="form-control" placeholder="Enter task title">
 </div>
 
 <div class="mb-3">
 <label class="form-label">Task Type</label>
-<select class="form-select">
-<option>Important</option>
-<option>To Do</option>
+<select class="form-select" name="tasktype">
+<option value='important'>Important</option>
+<option value='notimportant'>Not improtant</option>
+</select>
+</div>
+
+
+<div class="mb-3">
+<label class="form-label">Assign To</label>
+<select class="form-select" name="assignto">
+<option value=''>-assign To-</option>
+@foreach($assignto as $row)
+<option value='{{$row->name}}'>{{$row->name}}</option>
+@endforeach
 </select>
 </div>
 
 <div class="mb-3">
 <label class="form-label">Date</label>
-<input type="date" class="form-control">
+<input type="date" name="date" class="form-control">
 </div>
 
 <div class="row">
 <div class="col-6 mb-3">
 <label class="form-label">Start Time</label>
-<input type="time" class="form-control">
+<input type="time" name="start_time" class="form-control">
 </div>
 <div class="col-6 mb-3">
 <label class="form-label">End Time</label>
-<input type="time" class="form-control">
+<input type="time" name="end_time" class="form-control">
 </div>
 </div>
 
 <div class="mb-3">
 <label class="form-label">Description</label>
-<textarea class="form-control" rows="3" placeholder="Optional"></textarea>
+<textarea name="descriptions" class="form-control" rows="3" placeholder="Optional"></textarea>
 </div>
 
 <button type="submit" class="btn btn-warning w-100 fw-semibold">
@@ -111,7 +134,6 @@ Add Task
 </div>
 
 <!-- logout modal -->
-
 <div class="modal fade" id="logoutModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content rounded-4">

@@ -1,6 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Models\AddTask;
+use DB;
 class TaskHomeController extends Controller
 {
     /**
@@ -11,6 +13,11 @@ class TaskHomeController extends Controller
     public function index()
     {
         return view('task.index');
+    }
+    public function dashboard()
+    {
+        $assignto=DB::table('admin_add_employees')->get();
+        return view('task.content',["assignto"=>$assignto]);
     }
 
     /**
@@ -31,7 +38,33 @@ class TaskHomeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //create a validations
+         $validated = $request->validate([
+              
+          'title' => 'required|max:255',
+          'tasktype' => 'required|max:255',
+          'assignto' => 'required',
+          'date' => 'required|max:255',
+          'start_time' => 'required|max:255',
+          'end_time' => 'required|max:255',
+          'descriptions' => 'required|max:255',
+          
+         ]);   
+
+        //  create a ORM Elequent query builder for insert data
+            
+        $data=array(
+            "title"=>$request->title,
+            "tasktype"=>$request->tasktype,
+            "assignto"=>$request->assignto,
+            "date"=>$request->date,
+            "start_time"=>$request->start_time,
+            "end_time"=>$request->end_time,
+            "descriptions"=>$request->descriptions,
+        );
+        // insert elequent ORM model
+        AddTask::create($data);
+        return redirect('/dashboard')->with('success','Task successfully added');
     }
 
     /**

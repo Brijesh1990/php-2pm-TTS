@@ -18,15 +18,18 @@ use App\Http\Controllers\admin\AddEmployeeController;
 */
 // add task manager routing
 Route::get('/', [TaskHomeController::class, 'index']);
+Route::post('/', [TaskHomeController::class, 'store']);
 Route::get('/register', [RegisterController::class, 'index']);
 Route::get('/login', [RegisterController::class, 'login']);
 // contact us page routing
 Route::get('/contact-us', [ContactController::class, 'index']);
 Route::post('/contact-us', [ContactController::class, 'store']);
-// add task
-Route::get('/dashboard', [RegisterController::class, 'dashboard']);
-Route::post('/dashboard', [RegisterController::class, 'store']);
-Route::get('/manage-task', [RegisterController::class, 'show']);
+// add task from user panel 
+Route::post('/contact-us', [ContactController::class, 'store']);
+// manage task from admin
+Route::get('/dashboard', [TaskHomeController::class, 'dashboard']);
+Route::post('/dashboard', [TaskHomeController::class, 'store']);
+Route::get('/manage-task', [TaskHomeController::class, 'show']);
 // admin routing
 Route::get('/admin-login', [AdminControllerLogin::class, 'index']);
 Route::get('/admin-login/dashboard', [AdminControllerDashboard::class, 'index']);
@@ -36,4 +39,9 @@ Route::get('/admin-login/manage-contact/{id}', [ContactController::class, 'destr
 Route::get('/admin-login/add-employee', [AddEmployeeController::class, 'index']);
 Route::post('/admin-login/add-employee', [AddEmployeeController::class, 'store']);
 Route::get('/admin-login/manage-employee', [AddEmployeeController::class, 'show']);
-Route::get('/admin-login/manage-employee/{id}', [AddEmployeeController::class, 'destroy']);Route::get('/admin-login/manage-employee/{id}', [AddEmployeeController::class, 'edit']);Route::post('/admin-login/manage-employee/{id}', [AddEmployeeController::class, 'update']);
+
+Route::get('/admin-login/manage-employee/{id}',[AddEmployeeController::class, 'destroy']);
+
+Route::get('/admin-login/edit-employee/{id}', [AddEmployeeController::class, 'edit']);
+
+Route::post('/admin-login/edit-employee/{id}', [AddEmployeeController::class, 'update']);
