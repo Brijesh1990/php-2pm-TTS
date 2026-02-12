@@ -27,9 +27,11 @@ Route::post('/contact-us', [ContactController::class, 'store']);
 // add task from user panel 
 Route::post('/contact-us', [ContactController::class, 'store']);
 // manage task from admin
-Route::get('/dashboard', [TaskHomeController::class, 'dashboard']);
+Route::get('/dashboard', [TaskHomeController::class, 'shwall']);
 Route::post('/dashboard', [TaskHomeController::class, 'store']);
-Route::get('/manage-task', [TaskHomeController::class, 'show']);
+Route::get('/dashboard/{id}', [TaskHomeController::class, 'destroy']);
+Route::get('/dashboard/edit-task/{id}', [TaskHomeController::class, 'edit']);
+Route::post('/dashboard/edit-task/{id}', [TaskHomeController::class, 'update']);
 // admin routing
 Route::get('/admin-login', [AdminControllerLogin::class, 'index']);
 Route::get('/admin-login/dashboard', [AdminControllerDashboard::class, 'index']);

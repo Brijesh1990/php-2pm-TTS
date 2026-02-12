@@ -14,10 +14,12 @@ class TaskHomeController extends Controller
     {
         return view('task.index');
     }
-    public function dashboard()
+    public function shwall()
     {
         $assignto=DB::table('admin_add_employees')->get();
-        return view('task.content',["assignto"=>$assignto]);
+        $counttask=DB::table('add_tasks')->count();
+        $data=DB::table('add_tasks')->get();
+        return view('task.content',["assignto"=>$assignto,"counttask"=>$counttask,"data"=>$data]);
     }
 
     /**
@@ -73,9 +75,12 @@ class TaskHomeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        //manage all task in user panel
+        // $data=AddTask::all();
+        // return view('task.content',["data"=>$data]);
+
     }
 
     /**
@@ -85,8 +90,11 @@ class TaskHomeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        //
+    {  
+        $editdata=AddTask::where("id",$id)->first();
+        //dd($data);
+        return view('task.edittask',["editdata"=>$editdata]);
+        
     }
 
     /**
@@ -109,6 +117,7 @@ class TaskHomeController extends Controller
      */
     public function destroy($id)
     {
-        //
+          AddTask::where("id",$id)->delete();
+          return redirect('/dashboard')->with('success','Task successfully deleted');
     }
 }
