@@ -22,6 +22,16 @@ class TaskHomeController extends Controller
         return view('task.content',["assignto"=>$assignto,"counttask"=>$counttask,"data"=>$data]);
     }
 
+
+    // manage all task in admin blade
+    public function shwtask()
+    {
+        $assignto=DB::table('admin_add_employees')->get();
+        $counttask=DB::table('add_tasks')->count();
+        $data=DB::table('add_tasks')->get();
+        return view('task.admin.managetask',["assignto"=>$assignto,"counttask"=>$counttask,"data"=>$data]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -92,8 +102,10 @@ class TaskHomeController extends Controller
     public function edit($id)
     {  
         $editdata=AddTask::where("id",$id)->first();
+        $assignto=DB::table('admin_add_employees')->get();
+        $counttask=DB::table('add_tasks')->count();
         //dd($data);
-        return view('task.edittask',["editdata"=>$editdata]);
+        return view('task.edittask',["editdata"=>$editdata,"assignto"=>$assignto]);
         
     }
 
@@ -106,7 +118,20 @@ class TaskHomeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+             
+        $data=array(
+            "title"=>$request->title,
+            "tasktype"=>$request->tasktype,
+            "assignto"=>$request->assignto,
+            "date"=>$request->date,
+            "start_time"=>$request->start_time,
+            "end_time"=>$request->end_time,
+            "descriptions"=>$request->descriptions,
+        );
+
+        // applied update data of task manager app 
+         AddTask::where('id',$id)->update($data);
+         return redirect('/dashboard')->with('success','Task updated successfully');
     }
 
     /**
@@ -119,5 +144,12 @@ class TaskHomeController extends Controller
     {
           AddTask::where("id",$id)->delete();
           return redirect('/dashboard')->with('success','Task successfully deleted');
+    }
+
+    // delete data in admin
+      public function destroy_data($id)
+    {
+          AddTask::where("id",$id)->delete();
+          return redirect('/admin-login/manage-task')->with('success','Task successfully deleted');
     }
 }

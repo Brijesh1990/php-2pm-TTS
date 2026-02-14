@@ -30,8 +30,8 @@
 </li>
 
 <li class="nav-item">
-<a href="#" class="nav-link">
-<i class="bi bi-list-task me-2"></i> Tasks
+<a href="/admin-login/manage-task" class="nav-link">
+<i class="bi bi-list-task me-2"></i> Manage Tasks
 </a>
 </li>
 

@@ -41,9 +41,10 @@ Route::get('/admin-login/manage-contact/{id}', [ContactController::class, 'destr
 Route::get('/admin-login/add-employee', [AddEmployeeController::class, 'index']);
 Route::post('/admin-login/add-employee', [AddEmployeeController::class, 'store']);
 Route::get('/admin-login/manage-employee', [AddEmployeeController::class, 'show']);
-
 Route::get('/admin-login/manage-employee/{id}',[AddEmployeeController::class, 'destroy']);
-
 Route::get('/admin-login/edit-employee/{id}', [AddEmployeeController::class, 'edit']);
-
 Route::post('/admin-login/edit-employee/{id}', [AddEmployeeController::class, 'update']);
+
+// manage all task 
+Route::get('/admin-login/manage-task', [TaskHomeController::class, 'shwtask']);
+Route::get('/admin-login/manage-task/{id}', [TaskHomeController::class, 'destroy_data']);
