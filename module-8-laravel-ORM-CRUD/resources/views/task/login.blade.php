@@ -86,10 +86,18 @@
         Accomplish your daily tasks and we help you
         keep track of your growth
       </p>
+
+        <!-- pass a success messages  -->
+@if(Session('success'))
+<div class="alert alert-success">
+<span>{{session('success')}}</span>
+</div>
+@endif
     </div>
 
     <!-- Illustration Section -->
 <div class="illustration">
+
   <form class="w-100">
 
     <div class="mb-3">

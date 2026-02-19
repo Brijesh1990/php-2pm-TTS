@@ -20,6 +20,7 @@ use App\Http\Controllers\admin\AddEmployeeController;
 Route::get('/', [TaskHomeController::class, 'index']);
 Route::post('/', [TaskHomeController::class, 'store']);
 Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/login', [RegisterController::class, 'login']);
 // contact us page routing
 Route::get('/contact-us', [ContactController::class, 'index']);
@@ -48,3 +49,6 @@ Route::post('/admin-login/edit-employee/{id}', [AddEmployeeController::class, 'u
 // manage all task 
 Route::get('/admin-login/manage-task', [TaskHomeController::class, 'shwtask']);
 Route::get('/admin-login/manage-task/{id}', [TaskHomeController::class, 'destroy_data']);
+// manage all registered users in admin
+Route::get('/admin-login/manage-users', [RegisterController::class, 'manageuser']);
+Route::get('/admin-login/manage-users/{id}', [RegisterController::class, 'destroy']);

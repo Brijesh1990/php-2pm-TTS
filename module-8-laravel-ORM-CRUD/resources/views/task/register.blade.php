@@ -79,6 +79,15 @@
 <body>
 
   <div class="screen">
+      @if ($errors->any())
+<div class="alert alert-danger">
+<ul>
+@foreach ($errors->all() as $error)
+<li>{{ $error }}</li>
+@endforeach
+</ul>
+</div>
+@endif
       <!-- Text Content -->
     <div class="content text-center">
       <h2>Create your account!</h2>
@@ -90,15 +99,27 @@
 
     <!-- Illustration Section -->
     <div class="illustration">
-    <form class="w-100">
 
+    <form class="w-100" method="post" enctype="multipart/form-data">
+    @csrf
+
+    
+  <div class="mb-3">
+    <label class="form-label">Upload photo</label>
+    <div class="input-group">
+      <span class="input-group-text">
+        <i class="bi bi-person"></i>
+      </span>
+      <input type="file" name="file" class="form-control p-0" placeholder="Enter your name">
+    </div>
+  </div>
   <div class="mb-3">
     <label class="form-label">Full Name</label>
     <div class="input-group">
       <span class="input-group-text">
         <i class="bi bi-person"></i>
       </span>
-      <input type="text" class="form-control p-0" placeholder="Enter your name" required>
+      <input type="text" name="fullname" class="form-control p-0" placeholder="Enter your name">
     </div>
   </div>
 
@@ -108,7 +129,7 @@
       <span class="input-group-text">
         <i class="bi bi-envelope"></i>
       </span>
-      <input type="email" class="form-control" placeholder="Enter email" required>
+      <input type="email" name="email" class="form-control" placeholder="Enter email">
     </div>
   </div>
 
@@ -118,7 +139,7 @@
       <span class="input-group-text">
         <i class="bi bi-telephone"></i>
       </span>
-      <input type="tel" class="form-control" placeholder="Enter phone number">
+      <input type="tel" name="phone" class="form-control" placeholder="Enter phone number">
     </div>
   </div>
 
@@ -128,7 +149,7 @@
       <span class="input-group-text">
         <i class="bi bi-lock"></i>
       </span>
-      <input type="password" class="form-control" placeholder="Create password" required>
+      <input type="password" name="password" class="form-control" placeholder="Create password">
     </div>
   </div>
 
@@ -138,12 +159,12 @@
       <span class="input-group-text">
         <i class="bi bi-lock-fill"></i>
       </span>
-      <input type="password" class="form-control" placeholder="Confirm password" required>
+      <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm password">
     </div>
   </div>
 
   <div class="form-check mb-3">
-    <input class="form-check-input" type="checkbox" id="terms" required>
+    <input class="form-check-input" type="checkbox" id="terms">
     <label class="form-check-label" for="terms">
       I agree to the <a href="#">Terms & Conditions</a>
     </label>

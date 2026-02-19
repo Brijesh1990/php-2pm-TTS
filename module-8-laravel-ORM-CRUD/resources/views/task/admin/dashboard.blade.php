@@ -15,8 +15,8 @@
       <div class="row g-4 mb-4">
         <div class="col-md-4">
           <div class="card dashboard-card shadow-sm p-4">
-            <h6 class="text-muted">Total Tasks</h6>
-            <h3 class="fw-bold">24</h3>
+            <h6 class="text-muted">Total Users</h6>
+            <a href='/admin-login/manage-users'><h3 class="fw-bold">{{$totalUsers}}</h3></a>
           </div>
         </div>
 

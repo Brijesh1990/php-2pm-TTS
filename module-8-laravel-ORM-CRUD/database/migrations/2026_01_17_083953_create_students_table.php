@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
              $table->increments("id");
              $table->string("studentname");
-            $table->timestamps();
+             $table->timestamps();
         });
     }
 

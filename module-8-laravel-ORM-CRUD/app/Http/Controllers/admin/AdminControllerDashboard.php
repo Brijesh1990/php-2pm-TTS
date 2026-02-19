@@ -15,14 +15,15 @@ class AdminControllerDashboard extends Controller
     {
         // apply select query for count total contact
         $totalContact=DB::table('contacts')->count();
+        // apply select query for count total registered users 
+        $totalUsers=DB::table('users')->count();
         // apply select query for count total employee
         $totalEmployee=DB::table('admin_add_employees')->count();
         // print query result
         //dd($totalContact,$totalEmployee);
         // apply select query for count total task
-        
         // pass data in view
-        return view('task.admin.dashboard',compact('totalContact','totalEmployee'));
+        return view('task.admin.dashboard',compact('totalContact','totalEmployee','totalUsers'));
     
     }
 
