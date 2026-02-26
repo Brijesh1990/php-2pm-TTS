@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\admin;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AdminLogin extends Controller
+class AdminLoginController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class AdminLogin extends Controller
      */
     public function index()
     {
-        //
+        return view('ecomm.admin.login');
     }
 
     /**

@@ -1,8 +1,11 @@
 <?php
-namespace App\Http\Controllers;
+
+namespace App\Http\Controllers\admin;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Products;
-class ProductsController extends Controller
+
+class AdminDashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -11,30 +14,22 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        return view('ecomm.products');
+        return view('ecomm.admin.dashboard');
     }
 
-    // products details
-
-    public function ProductDetails()
+      public function showcustomers()
     {
-        return view('ecomm.products-details');
+        return view('ecomm.admin.managecustomers');
     }
-    // view Cart
-    public function viewCart()
+    
+      public function showreviews()
     {
-        return view('ecomm.cart');
+        return view('ecomm.admin.managereviews');
     }
-    // checkout
-        public function Checkout()
+    
+      public function showcontacts()
     {
-        return view('ecomm.checkout');
-    }
-
-    // Orders success
-        public function Orders()
-    {
-        return view('ecomm.orders');
+        return view('ecomm.admin.managecontacts');
     }
 
     /**
