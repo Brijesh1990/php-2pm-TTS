@@ -137,10 +137,12 @@ class="w-full p-3 bg-gray-400 rounded-2xl text-white font-bold"
       <div>
         <h3 class="font-semibold text-gray-900 mb-3">Useful Links</h3>
         <ul class="space-y-2">
-          <li><a href="about.html" class="hover:text-green-600">About Us</a></li>
+         <li><a href="/contact-us" class="hover:text-green-600">Contact us</a></li>  
+        <li><a href="about.html" class="hover:text-green-600">About Us</a></li>
           <li><a href="career.html" class="hover:text-green-600">Careers</a></li>
           <li><a href="blogs.html" class="hover:text-green-600">Blog</a></li>
           <li><a href="faq.html" class="hover:text-green-600">FAQs</a></li>
+          
         </ul>
       </div>
 

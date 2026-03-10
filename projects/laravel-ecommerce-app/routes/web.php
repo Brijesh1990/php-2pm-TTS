@@ -2,11 +2,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\admin\AdminLoginController;
 use App\Http\Controllers\admin\AdminDashboardController;
 use App\Http\Controllers\admin\AddCategoryController;
 use App\Http\Controllers\admin\AddSubCategoryController;
 use App\Http\Controllers\admin\AddProductsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +21,8 @@ use App\Http\Controllers\admin\AddProductsController;
 */
 // ecommerce customers routing
 Route::get('/',[HomeController::class,'index']);
+Route::get('/contact-us',[ContactController::class,'index']);
+Route::post('/contact-us',[ContactController::class,'store']);
 Route::get('/all-products',[ProductsController::class,'index']);
 Route::get('/products-details',[ProductsController::class,'ProductDetails']);
 Route::get('/view-cart',[ProductsController::class,'viewCart']);
@@ -31,8 +35,8 @@ Route::get('/admin-login/add-category',[AddCategoryController::class,'index']);
 Route::get('/admin-login/add-subcategory',[AddSubCategoryController::class,'index']);
 Route::get('/admin-login/add-products',[AddProductsController::class,'index']);
 Route::get('/admin-login/manage-customers',[HomeController::class,'index']);
-Route::get('/admin-login/manage-contacts',[AdminDashboardController::class,'showcontacts']);
 Route::get('/admin-login/manage-orders',[HomeController::class,'index']);
 Route::get('/admin-login/manage-reviews',[HomeController::class,'index']);
 Route::get('/admin-login/manage-bills',[HomeController::class,'index']);
-
+Route::get('/admin-login/manage-contacts',[ContactController::class,'show']);
+Route::get('/admin-login/manage-contacts/{id}',[ContactController::class,'destroy']);
