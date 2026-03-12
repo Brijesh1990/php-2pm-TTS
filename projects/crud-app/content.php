@@ -7,13 +7,16 @@
 <th>#id</th>
 <th>Name</th>
 <th>Salary</th>
+<th>Country</th>
+<th>State</th>
+<th>city</th>
 <th>Address</th>
 <th>Added Date</th>
 <th>Action</th>
 </tr>
 <?php 
 // <!-- fetch data -->
-$select="select * from tbl_employee";
+$select="select tbl_employee.*, cname,sname,ctname from tbl_employee join tbl_country on tbl_country.cid=tbl_employee.cid join tbl_state on tbl_employee.sid=tbl_state.sid join tbl_city on tbl_employee.ctid=tbl_city.ctid";
 $query=mysqli_query($con,$select); 
 $i=0;
 while($fetch=mysqli_fetch_array($query))
@@ -26,6 +29,9 @@ while($fetch=mysqli_fetch_array($query))
 <td><?php echo $i;?></td>
 <td><?php echo $fetch["employeename"];?></td>
 <td><?php echo $fetch["employeesalary"];?></td>
+<td><?php echo $fetch["cname"];?></td>
+<td><?php echo $fetch["sname"];?></td>
+<td><?php echo $fetch["ctname"];?></td>
 <td><?php echo $fetch["employeeaddress"];?></td>
 <td><?php echo $fetch["added_date_time"];?></td>
 <td>
