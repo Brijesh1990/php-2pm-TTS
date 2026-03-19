@@ -7,10 +7,11 @@ $empsalary=$_POST["empsalary"];
 $country=$_POST["txt_country"];
 $st=$_POST["txt_state"];
 $ct=$_POST["txt_city"];
+$comp=$_POST["txt_company"];
 $empaddress=$_POST["empaddress"];
 $date_time=date("d/m/Y H:i:s a");
 //create a insert query
-$insert="insert into tbl_employee(employeename,employeesalary,cid,sid,ctid,employeeaddress,added_date_time) values ('$empname','$empsalary','$country','$st','$ct','$empaddress','$date_time')";
+$insert="insert into tbl_employee(employeename,employeesalary,cid,sid,ctid,compid,employeeaddress,added_date_time) values ('$empname','$empsalary','$country','$st','$ct','$comp','$empaddress','$date_time')";
 //execute query 
 $query=mysqli_query($con,$insert);
 echo "<script>
@@ -95,6 +96,21 @@ while($fetch=mysqli_fetch_array($query))
 </select>
 </div>
 
+<div class="form-group mt-3">
+<select id="company"  name="txt_company" placeholder="Salary *" required class="form-control"
+<option value="">-select company-</option>  
+<?php 
+$select="select * from tbl_company";
+$query=mysqli_query($con,$select);
+while($fetch=mysqli_fetch_array($query))
+{ 
+?>
+<option value="<?php echo $fetch["compid"];?>"><?php echo $fetch["companyname"];?></option>    
+<?php 
+}
+?>
+</select>
+</div>
 <div class="form-group mt-3">
 <textarea  name="empaddress" placeholder="Address *" required class="form-control"></textarea>
 </div>
