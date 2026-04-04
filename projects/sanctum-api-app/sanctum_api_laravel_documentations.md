@@ -212,7 +212,6 @@ class AuthController extends Controller
 
 6. Create Product Controller
 
-
 php artisan make:controller API/ProductController --api
 
 ProductController.php
